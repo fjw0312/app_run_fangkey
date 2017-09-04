@@ -1,0 +1,11 @@
+先在androidManifest.xml 中添加对文件写入的权限
+
+添加libfang_key_MakeKey.so
+    fangKey.jar
+
+在代码中写入：MakeKey makeKey = new MakeKey();  
+             int ret = makeKey.makeKeyFile("/mnt/sdcard/tmp");
+    成功返回：0  ，失败返回：-1
+
+  该so/jar 还支持cpuInfo 序列号查询： makeKey.getCpuSerial();
+           生成的APPKey查询： makeKey.getAPPKey();
